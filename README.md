@@ -25,13 +25,13 @@ This report briefly describes my wrangling efforts.
 Data are from 3 sources: 
 
    •	Twitter Archive file: the twitter_archive_enhanced.csv. contains tweet IDs and their tweets. 
-        This file was provided by Udacity and downloaded manually.
+     This file was provided by Udacity and downloaded manually.
         
-   •	Additional Data via the Twitter API and JSON: by using the tweet IDs in the WeRateDogs Twitter archive, I queried the Twitter           API for each tweet’s JSON data using Python’s Tweepy library and store each tweet’s entire set of JSON data file into                   tweet_json.txt file. Then, each tweet’s JSON data was written to its own line. I created a dataframe to read this txt file line         by line into a pandas DataFrame with the columns of my interest such as the tweet ID, retweet count, and favorite count.
+   •	Additional Data via the Twitter API and JSON: by using the tweet IDs in the WeRateDogs Twitter archive, I queried the Twitter            API for each tweet’s JSON data using Python’s Tweepy library and store each tweet’s entire set of JSON data file into                    tweet_json.txt file. Then, each tweet’s JSON data was written to its own line. I created a dataframe to read this txt file line          by line into a pandas DataFrame with the columns of my interest such as the tweet ID, retweet count, and favorite count.
         
    •	The tweet image predictions: contains what breed of dog is present in each tweet according to a neural network. 
-        This file image_predictions.tsv is hosted on Udacity’s servers and downloaded programmatically using the Request library and URL
-        information. 
+     This file image_predictions.tsv is hosted on Udacity’s servers and downloaded programmatically using the Request library and URL
+     information. 
 
 
 
@@ -67,14 +67,14 @@ twitter_1 dataframe:
 df_tweet2 dataframe:
 
 1.	There are 23 missing tweets compared to the twitter_1 dataframe. By checking the collected status data on tweets, the 23 missing 
-    tweets are resulted to 'No status found with these IDs.' 
+   tweets are resulted to 'No status found with these IDs.' 
     
 images dataframe:
 
 1.	The first letter on the labels in p1, p2, p3 are inconsistent with upper case and lower case. 
 2.	There are three dog predictions.
 3.	There is a total of 2075 images and there are 2356 tweets in the twitter_1 dataframe. 
-    This probably means not all 2356 tweets had pictures. 
+   This probably means not all 2356 tweets had pictures. 
 
 
 # Tidiness Issues
@@ -82,14 +82,14 @@ images dataframe:
 twitter_1 dataframe:
 
 1.	df_tweet2 dataframe and images dataframe should be combined with the twitter_1 dataframe since 
-    they are information about the same tweet. 
+   they are information about the same tweet. 
 2.	Four different columns (doggo, floofer, pupper, and puppo) with 1 variable. 
 
 
 
 # CLEANING DATA
 
-Data wrangling process steps are define (instruction list), code (extract, drop, isnan, islower, replace, and etc.) and then test the 
+Data wrangling process steps are defined (instruction list), code (extract, drop, isnan, islower, replace, and etc.) and then test the 
 code to assure the cleaning operations work correctly. Very first step is to create a copy of the original dataframes and then 
 I merged the three dataframes since they are the information about the same tweet. The combined and cleaned data is saved as 
 twitter_archive_master.csv 
